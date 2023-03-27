@@ -93,6 +93,8 @@ const iconClass = computed(() => {
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";
 
+$anim-speed: 0.2s;
+
 .clock {
   width: 225px;
   background-color: $background-light;
@@ -112,7 +114,7 @@ const iconClass = computed(() => {
   color: $text-color-dark;
   font-size: 22px;
 
-  transition: border-bottom 0.2s, color 0.2s;
+  transition: border-bottom $anim-speed, color $anim-speed;
 
   &_active {
     border-bottom: solid 2px $text-color;
@@ -129,11 +131,16 @@ const iconClass = computed(() => {
   &__btn {
     margin: 0 20px;
     color: $text-color-dark;
+
+    &:hover .icon {
+      fill: $text-color;
+    }
   }
 }
 
 .icon {
   fill: $text-color-dark;
+  transition: fill $anim-speed;
 
   &_active {
     fill: $text-color;

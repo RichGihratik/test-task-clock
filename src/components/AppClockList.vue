@@ -68,10 +68,15 @@ function addNew() {
     width: 225px;
     height: 120px;
     background-color: $background-light;
+
+    &:hover .icon {
+      fill: $text-color;
+    }
   }
 }
 
 .icon {
   fill: $text-color-dark;
+  transition: fill 0.2s;
 }
 </style>
